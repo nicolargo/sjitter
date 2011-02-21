@@ -1,0 +1,8 @@
+AC_INIT(configure.in)
+AM_INIT_AUTOMAKE(sjitter, 0.15)
+AC_PROG_CC
+AC_PROG_INSTALL
+AC_OUTPUT([
+Makefile
+])
+

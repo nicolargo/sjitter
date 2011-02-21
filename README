@@ -1,0 +1,9 @@
+Sjitter provides, in a simple command line interface, 
+a tool to measure jitter, one way delay and bandwidth.
+
+Sjitter is a simple network performance tool to measure:
+- jitter (based on the RFC 1889).
+- one way delay (based on UDP datagram transit time).
+- bandwidth (steel experimental).
+Sjitter is a client/server program. Both client and server 
+need to be date and time synchronize.

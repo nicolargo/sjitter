@@ -1,0 +1,27 @@
+-------------
+Release notes 
+-------------
+
+Version 0.15:
+- Package generate with automake
+
+Version 0.14:
+- Use timer (-t option)
+- Rewrite progress bar procedure
+- Man pages
+
+Version 0.13:
+- add buffer size parameters (-w option)
+- Fix a bug in the minimum value
+- Send a SJITTER-STOP datagram when a client is CTRL-C (thanks to Daitau Aaron)
+
+Version 0.12:
+- Use DNS name additionnaly to IP address (OK 06/07/2006)
+- Multiple measure on the server
+- Bug fix
+
+Version 0.11:
+- Correct bug in the archive
+
+Version 0.1:
+- First beta version

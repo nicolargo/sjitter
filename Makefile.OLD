@@ -1,0 +1,32 @@
+CC= gcc
+RM= rm
+TAR= tar
+CFLAGS= -Wall
+LDFLAGS= -Wall -ansi
+
+VERSION= 0.14b
+BIN= sjitters sjitterc
+
+all: $(BIN)
+
+sjitters: sjitters.o jitter.o
+	$(CC) -o $@ $^ $(LDFLAGS)
+
+sjitterc: sjitterc.o jitter.o
+	$(CC) -o $@ $^ $(LDFLAGS)
+
+sjitter: sjitter.c
+	$(CC) -o $@ $^ $(LDFLAGS) `pkg-config --libs --cflags gtk+-2.0`
+
+%.o: %.c
+	$(CC) -o $@ -c $< $(CFLAGS)
+
+clean:
+	$(RM) -rf $(BIN) *.o sjitters sjitterc
+
+pkg:
+	tar zcvf sjitter-$(VERSION).tgz *.c *.h Makefile README TODO *.1.gz
+	cp sjitter-$(VERSION).tgz ~/rpm/SOURCES
+	rpmbuild -ba sjitter.spec
+	mv ./sjitter-$(VERSION).tgz ./_pkg/
+	cp ~/rpm/RPMS/i386/sjitter-$(VERSION)* ./_rpm/
